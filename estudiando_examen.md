@@ -784,6 +784,129 @@ Otros:
 
 # Guia de Estudio - Redes: Capas Aplicacion y Transporte
 
+## 1. Modelo OSI y Capa de Aplicación
+
+**Describa las capas del modelo ISO-OSI, partiendo por las capa física y concluyendo en la capa de aplicación.**
+
+  Las capas del modelo ISO-OSI son:
+     
+  1. **Fisica:**  Transmicion binaria *envia toda la informacion binaria (ejemplo cable de internet)* 
+     
+  2. **Enlace de datos:** Acceso a los medios *Toma toda la informacio y lo traduce a informacion binaria*
+     
+  3. **Red:** Direccionamiento y mejor ruta
+     
+  4. **Transporte:** Comunicacion de extremo a extremo *segmenta, hace seguimiento y identifica los paquetes*
+     
+     
+  5. **Sesion:** Comunicacion entre host(equipos)
+     
+  6. **Presentacion:** *Se encarga de traducir es formato al que estamos solicitando o deseando ver*
+       - Asegurarse que el servicio receptor pueda leer los datos
+       - Formato de los datos
+       - Estructura de los datos
+       - Negociar la sintaxis de transferencias de datos para la capa de aplicacion
+  
+  7. **Aplicacion:** Proporciona servicios de red a proceso de aplicacion *Es la capa donde todo el mundo ve, es la aplicacion misma (por ejemplo youtube o whatsapp), es la aplicacion o el pograma que realiza la cominicacion con las distintas capas*
+
+<!-- https://www.youtube.com/watch?v=CnNRdJgeMo8 -->
+
+**¿Cuáles son las responsabilidades de la capa de aplicación en el modelo OSI?**
+  - capa de presentacion: 
+    - la codificacion y conversion de datos de la capa de aplicacion
+    - La compresion de los datos
+    - La encriptacion de los datos para su transmision y posterior descifrado al llegar al destino
+
+  - capa de sesion:
+    - Administra el intercambio de informacion para iniciar dialogos, para mantenerlos activos y para reiniciar las sesiones
+    - Sus funciones crean y mantienen dialogos entre las aplicaciones de origen y destino
+
+**¿Por qué FTP requiere dos conexiones?**
+
+Se requieren dos puertos, esto debido a que se necesita mandar las instrucciones y el login en plain text en puerto 20 y puerto 21 para transferencia como tal de archivos.
+
+**¿Qué protocolos se necesitan (a nivel de aplicación) para poder enviar y recibir correos electrónicos?**
+
+Se necesitan un protocolo de envio de mensaje, en este caso el SMTP y uno para poder recibir y mostrarlos, este puede ser el   POP3, IMAC o HTML
+
+**¿Qué es DNS?**
+
+Es un sistema que transforma nombres de dominio y las relaciona a IPS
+
+**¿Es DNS un sistema centralizado o distribuido?**
+
+Es un sistema distribuido
+
+**Explica cómo funciona la jerarquía de servidores DNS.**
+
+En la parte mas arriba tenemos los clusters, estos son 13 repartidos geograficamente despues viene los Top Level Domain Pages que son los cositos de .com .edu .org o de paises como .cl o .ar adicionalmente estan los Third level domains como www mail o weas asi tipo www.uandes.cl o test@uandes.cl y osn autoritarios
+
+**Explica qué es un servidor DNS autoritario y por qué éstos son necesarios.**
+
+Un DNS autoritativo es el DNS que permite las comunicaciones y redirecciones dentro de un mismo tercer domain, o sub-dominio(creo) te sirve para crear alias de tus paginas (Facebook, fb,face), para linkear el nombre a la ip principal, correos y ns
+
+**¿Qué es una zona DNS?**
+
+Parte del espacio de nombres de DNS que gestiona una organizacion concreta o persona especifica como blog.matias.com donde blog seria la zona DNS matias
+
+**¿Cuáles son los formatos de registro DNS?**
+
+Tipo A(deja enrutados el main name con la Ip), CNAME(permite crear aliases para estas rutas), MA para los correos. Esta el NS, pero no entiendo que pasa ahí sorry.
+- **Registro A:** registro que contiene la dirección IP de un dominio. (name: ip)
+- **Registro CNAME:** reenvía un dominio o subdominio a otro dominio, NO proporciona
+una dirección IP. (Alias: camino a la ip)
+- **Registro NS:** almacena el servidor de nombres para una entrada DNS (nombre: dns
+tipo www.nombre o blog.name)
+- **Registro MX:** dirige el correo a un servidor de correo electrónico. (correos),
+
+**Supón que tienes dos servidores Web con direcciones IP públicas, y un servidor DNS autoritario para tu organización. Quieres registrar el nombre de dominio jajaja.cl en NIC Chile, y asignar www.jajaja.cl a un servidor web y fome.jajaja.cl al otro. ¿Qué registros DNS se deben crear en NIC Chile y en el servidor autoritario?**
+
+Configurar el NIC y el registro NS del servidor autoritario par configurar la DNS, en el server autoritario se debe vincular un registro tipo A al jajaja.cl en conjunto de su ip, con las zonas también habrá que crear NS para asignar el www y el fome.
+
+
+**¿Qué es un socket de internet?**
+
+Es una puerta que permite la comunicación entre cliente servidor.
+
+
+## 2. Capa de Transporte
+**¿Qué funciones cumple la capa de transportes de acuerdo al modelo ISO/OSI?**
+  Sus funciones son:
+
+  - **El seguimiento** de las conversaciones que mantiene un equipo
+
+  - **Segentacion:** dividir los datos en segmentos que son mas faciles de administrar y transportar.
+  
+  - **Identificacion** de las aplicaciones (multiplexacion de conversaciones simultaneas)
+  
+**En una red de datagramas (como Internet), ¿qué se requiere para que un protocolo de transporte permita la el arribo de datos en forma confiable al extremo receptor?**
+
+Se necesitan formas de confirmar que los paquetes hayan llegado al otro lado, de no pasar, se necesita retransmitirse.
+   
+**¿Para qué los protocolos de transporte incorporan pipelining?**
+  - Para mejorar la eficiencia TCP, ya que con el pipeline se puede mandar varios segmentos en rafaga, sin necesidad de esperar el ACK de uno para enviar el siguiente
+  - Mejora notablemente el rendimiento cuando se hacen transferencias masivas de datos, pues se evita tener una parada la conexion
+  
+<!-- https://www.youtube.com/watch?v=bfbgXEe7UoA -->
+
+**Describa en sus propias palabras cómo funcionan los protocolos Go-Back-N y repetición selectiva.**
+
+Go-back-N se retrocede hasta el ultimo paquete enviado (recordar que cada paquete aquí tiene su propio timer) y re envía todos a partir desde ahí, se devuelve n jaja, el otro es mas selectivo y solo manda ese paquete especifico perdido en función a cierta secuencia, igual puede presentar problemas si es que la ventana es muy corta.
+   
+**¿Qué es la partida lenta en TCP y qué efecto tiene?**
+
+
+
+**¿Cómo hace TCP para detectar congestión de red?**
+
+**¿Cómo es que TCP se adapta a la congestión de red?**
+
+**¿Cómo en TCP el emisor se entera de “cuánto puede recibir el receptor?**
+
+**¿Qué implica que en TCP el emisor reciba tres segmentos ACK iguales? ¿Qué es la “retransmisión rápida”?**
+
+**¿Qué efecto tiene en TCP la recepción de ACKs duplicados en comparación a un timeout?**
+
 # Actividad Evaluada #1 - 2018
 # Actividad Evaluada #1 - 2019
 # Actividad Evaluada #2 - 2017
