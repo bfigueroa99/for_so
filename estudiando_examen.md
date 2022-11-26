@@ -244,49 +244,106 @@
 
 # Clase 10 - Sistemas Distribuidos e Introduccion a Redes
 
-<!-- <image src="imagenes\clase10-1\clase10-1-01.png">
-<image src="imagenes\clase10-1\clase10-1-02.png">
-<image src="imagenes\clase10-1\clase10-1-03.png">
-<image src="imagenes\clase10-1\clase10-1-04.png">
-<image src="imagenes\clase10-1\clase10-1-05.png">
-<image src="imagenes\clase10-1\clase10-1-06.png">
-<image src="imagenes\clase10-1\clase10-1-07.png">
+<!-- <image src="imagenes\clase10-1\clase10-1-01.png"> -->
+
+
+**Sistemas Distribuidos:** es una coleccion de procesadores que no comparten memoria o reloj y que enstan interconectados por una red de comunicaciones
+- Los procesadores de un sistema distribuido no necesariamente son iguales entre si
+- Los procesadores son conocidos como sitios, nodos, computadores,maquinas o host, dependiendo del contexto en que son mencionados
+- Normalmente usaremos la palabra "sitio" para referirnos al lugar donde encontramos una maquina, y host para referirnos a algun procesador en un sitio
+- Generalmente, un hostque se encuentra en un sitio dererminado (servidor) tiene algun recurso que otro host en otro sitio necesita (cliente)
+
+<p align="center">
+    <image src="imagenes\Captura de pantalla 2022-11-26 135926.png">
+</p>
+
+<!-- <image src="imagenes\clase10-1\clase10-1-02.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-03.png"> -->
+
+<!-- EJEMPLOS DE Sistemas Distribuidos-->
+<!-- <image src="imagenes\clase10-1\clase10-1-04.png"> -->
+
+
+
+
+**Razones** para construir un Sistema Distribuido son:
+- **Compartir recursos:** Sitios con distintos recursos pueden servirse mutuamente para satisfacer sis necesidades
+- **Mejoras en rendimiento computacional:** Si un proceso puede ser subdividido en otros procesos concurentes entonces un sistema ditribuido permite distribuir los computos parciales entre sitios distintos y asi acelerar el computo objetivo
+- **Confiabilidad:** Si un sitio falla, los sitios restantes continuan operando, aunque no siempre es el caso
+- **Comunicacion:** Con host en ubicaciones en sitios geograficamente distribuidos, es posible implementar comunicaciones por paso de mensajes, transferencia de archivos, llamads e procedimiento remoto, etc
+
+## Distingamos tres **tipos de migraciones** que ocurren en estos sistemas:
+
+<!-- <image src="imagenes\clase10-1\clase10-1-05.png"> -->
+
+**Migracion de Datos:**
+- Supongamos que un usuario en unsiatio A quiere acceder un archivo que reside en un sitio B
+- El sistema puede transferir la data por dos metodos
+  - Copiar todo el archivo desde el sitio B al sitio A: Si el usuario modifica el archivoen el siatio A, este debe ser copiado de vuelta al sitio B *esto es ineficiente*
+  - Copiar al Sitio A solo aquellas porciones del archivo que son necesarias en lo inmediato. Si el archivo se modifica en A, Solo se copian de vuelta a B aquellas partes modificadas *Es mas eficiente y de hecho, lo que se usa en sistemas NFS y CIFS/SMB antes mencionados*
+
+**Migracion de Computabilidad:**
+- Supongamos que queremos extraer informacion de archivos que se encuentran dispersos en distintos sitios
+- En vez de migrar todos los datos de todos los sitios a un solo sitio extractor, es mas eficiente computacionalmente que cada nodo extraiga la informacion relevante y la reporte al nodo que la solicita
+- Esto puede implementarse a traves de llamadas a procedimientos remotos (Remote Procedure Call, RPC)
+  - El nodo requirente invoca una funcion remota en cada nodo que extrae la informacion desde archivos
+  - Cada invocaion retorna la data solicitada
+
+**Migracion de procesos:**
+- La migracion de procesos es implementada cuando se requiere que los procesos puedan ejecutarse en un host (o varios hosts) distinto(s) al host donde se solicito la ejecucion
+- Un proceso completo, o partes de este pueden ejecutarse en sitios distintos. Este esquema puede utilizarse con varios fines
+  - **Balanceo de carga:** Los procesos (o subprocesos) pueden distribuirse entre varios host para baleanzar la carga computacional.
+  - **Mejora del rendimiento computacional:** Se pueden dividir los procesos en sub-procesos que se pueden ejecutar concurrrentemente en distintos sitios, disminuyendo asi el tiempo para completar (turnaround time)
+  - **Preferencias de hardware:**  Un proceso puede tener requisitos especiales de hardware por lo que requiere migracion para ejecutar
+  - **Preferencias de software:** CUando se tienen requisitos especificamente s de software y este solo se encuentra  en un sitio determinado.
+  - **Acceso a los datos:** Al igual que en la migracion de la computabilidad, si los datos requeridos en un sitio remoto por un proceso son demasiados, es mejor ejecutar un proceso remoto que procese esos datos.
+- Se requieren dos tecnicas complementarias para migrar procesos en una red de computadores.
+- El sistema puede "ocutarle" al proceso de usuario requirente que el proceso ha sido migrado a otro host
+  - Se usa para lograr balanceo de carga y mejora de rendimiento computacional en sistemas homogeneos
+  - No se requiere intervencion del usuario para ejecutar programas remotamente
+- El sistema puede preguntarle al usuario de que manera el proceso debe ser migrado. Se usa este metodo cuando se necesita configurar parametros de hardware o software para la migracion
+
+<!-- <image src="imagenes\clase10-1\clase10-1-06.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-07.png"> -->
+
+
+
 <image src="imagenes\clase10-1\clase10-1-08.png">
 <image src="imagenes\clase10-1\clase10-1-09.png">
-<image src="imagenes\clase10-1\clase10-1-10.png">
-<image src="imagenes\clase10-1\clase10-1-11.png">
-<image src="imagenes\clase10-1\clase10-1-12.png">
-<image src="imagenes\clase10-1\clase10-1-13.png">
-<image src="imagenes\clase10-1\clase10-1-14.png">
-<image src="imagenes\clase10-1\clase10-1-15.png">
-<image src="imagenes\clase10-1\clase10-1-16.png">
-<image src="imagenes\clase10-1\clase10-1-17.png">
-<image src="imagenes\clase10-1\clase10-1-18.png">
-<image src="imagenes\clase10-1\clase10-1-19.png">
-<image src="imagenes\clase10-1\clase10-1-20.png">
-<image src="imagenes\clase10-1\clase10-1-21.png">
-<image src="imagenes\clase10-1\clase10-1-22.png">
-<image src="imagenes\clase10-1\clase10-1-23.png">
-<image src="imagenes\clase10-1\clase10-1-24.png">
-<image src="imagenes\clase10-1\clase10-1-25.png">
-<image src="imagenes\clase10-1\clase10-1-26.png">
-<image src="imagenes\clase10-1\clase10-1-27.png">
-<image src="imagenes\clase10-1\clase10-1-28.png">
-<image src="imagenes\clase10-1\clase10-1-29.png">
-<image src="imagenes\clase10-1\clase10-1-30.png">
-<image src="imagenes\clase10-1\clase10-1-31.png">
-<image src="imagenes\clase10-1\clase10-1-32.png">
-<image src="imagenes\clase10-1\clase10-1-33.png">
-<image src="imagenes\clase10-1\clase10-1-34.png">
-<image src="imagenes\clase10-1\clase10-1-35.png">
-<image src="imagenes\clase10-1\clase10-1-36.png">
-<image src="imagenes\clase10-1\clase10-1-37.png">
-<image src="imagenes\clase10-1\clase10-1-38.png">
-<image src="imagenes\clase10-1\clase10-1-39.png">
-<image src="imagenes\clase10-1\clase10-1-40.png">
-<image src="imagenes\clase10-1\clase10-1-41.png">
-<image src="imagenes\clase10-1\clase10-1-42.png">
-<image src="imagenes\clase10-1\clase10-1-43.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-10.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-11.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-12.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-13.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-14.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-15.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-16.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-17.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-18.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-19.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-20.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-21.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-22.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-23.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-24.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-25.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-26.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-27.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-28.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-29.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-30.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-31.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-32.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-33.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-34.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-35.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-36.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-37.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-38.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-39.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-40.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-41.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-42.png"> -->
+<!-- <image src="imagenes\clase10-1\clase10-1-43.png"> -->
 
 
 # Clase 11 - Capa de Aplicacion
@@ -895,15 +952,34 @@ Go-back-N se retrocede hasta el ultimo paquete enviado (recordar que cada paquet
    
 **¿Qué es la partida lenta en TCP y qué efecto tiene?**
 
+uno de los objetivos de la tcp es evitar la congestion en la red, y esto lo intenta cumplir con una condiciones basica, partiendo en no utilizar informacion de control que tenga generarse y transimitirse especificamente para este fin (es decir evitar paquetes extras). Y tambien se busca un reparto equitativo de la capacidad de transmicion de red.
+Para lograr todo lo anterior existe el arranque lento, es decir, los tamaños de los datos que se van mandando se van modificando, y para eso va modificando la ventama de congestion, esta ventana va creciendo exponencialmente
 
+<!-- https://www.youtube.com/watch?v=cFnqcfJf8Gc -->
 
 **¿Cómo hace TCP para detectar congestión de red?**
 
+gracias a los mensajes de acuso y recibo
+
+<!-- https://www.youtube.com/watch?v=nS08p-lsbPM -->
+
+
 **¿Cómo es que TCP se adapta a la congestión de red?**
+
+Y el Tcp se adapta a la congestion de red gracias a dos algoritmos: slow-start(arranque lento) y congestion avoidance(evitacion de congestion).
+
+<!-- https://www.youtube.com/watch?v=nS08p-lsbPM -->
 
 **¿Cómo en TCP el emisor se entera de “cuánto puede recibir el receptor?**
 
+Cada TCP maneja una ventana de congestion, lo cual con esto controlara el flujo entrante para poder asi, cuando la ventana este llena mandar un stop al emisor. Y el emisor se compromete a no mandar mas datos de lo prometido
+
+<!-- https://www.youtube.com/watch?v=nS08p-lsbPM -->
+
 **¿Qué implica que en TCP el emisor reciba tres segmentos ACK iguales? ¿Qué es la “retransmisión rápida”?**
+
+
+<!-- https://www.youtube.com/watch?v=4d8eswPldAo -->
 
 **¿Qué efecto tiene en TCP la recepción de ACKs duplicados en comparación a un timeout?**
 
