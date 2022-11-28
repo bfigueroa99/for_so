@@ -299,7 +299,7 @@
   - **Acceso a los datos:** Al igual que en la migracion de la computabilidad, si los datos requeridos en un sitio remoto por un proceso son demasiados, es mejor ejecutar un proceso remoto que procese esos datos.
 - Se requieren dos tecnicas complementarias para migrar procesos en una red de computadores.
 - El sistema puede "ocutarle" al proceso de usuario requirente que el proceso ha sido migrado a otro host
-  - Se usa para lograr balanceo de carga y mejora de rendimiento computacional en sistemas homogeneos
+- Se usa para lograr balanceo de carga y mejora de rendimiento computacional en sistemas homogeneos
   - No se requiere intervencion del usuario para ejecutar programas remotamente
 - El sistema puede preguntarle al usuario de que manera el proceso debe ser migrado. Se usa este metodo cuando se necesita configurar parametros de hardware o software para la migracion
 
@@ -734,7 +734,7 @@ Otros:
 
 **Describe cómo sería posible crear en C un programa tal que al ejecutar genere un proceso hijo que ejecute un programa distinto.**
 
-<!-- En este caso el programa tendría que invocar fork para crear un proceso hijo, y el código del proceso hijo tendría que invocar exec para cargar la imagen del programa deseado en el espacio de memoria del proceso hijo y comenzar su ejecución. -->
+En este caso el programa tendría que invocar fork para crear un proceso hijo, y el código del proceso hijo tendría que invocar exec para cargar la imagen del programa deseado en el espacio de memoria del proceso hijo y comenzar su ejecución.
 
 **Completa el siguiente código para ilustrar la implementación de un spin lock usando la instrucción test and set. Explica qué hace esta instrucción.**
 
@@ -755,16 +755,16 @@ Otros:
 
 **¿Qué representa una dirección lógica en un sistema computacional que implementa segmentación?**
 
-<!-- La dirección lógica indica un segmento a acceder y un desplazamiento dentro de dicho segmento. La parte de la dirección que indica el segmento se le llama selector de segmento. En algunas arquitecturas pueden existir en el selector bits para indicar si se quiere acceder a un segmento en una tabla local o global de segmentos. -->
+La dirección lógica indica un segmento a acceder y un desplazamiento dentro de dicho segmento. La parte de la dirección que indica el segmento se le llama selector de segmento. En algunas arquitecturas pueden existir en el selector bits para indicar si se quiere acceder a un segmento en una tabla local o global de segmentos.
 
 **Un sistema de archivos basado en i-nodos almacena archivos considerando la siguiente estructura básica de i-nodo: 10 punteros a bloques directos de datos de archivo, 3 punteros de indirección simple, 2 punteros de indirección doble y 1 puntero de indirección triple. ¿Cómo se puede saber el máximo tamaño de archivo posible? Deja tu resultado expresado algebraicamente, incluyendo el tamaño de puntero.**
 
-<!-- El máximo tamaño de archivo posible (mfs) es dado por:
-<image src="imagenes\Captura de pantalla 2022-11-25 114126.png"> -->
+El máximo tamaño de archivo posible (mfs) es dado por:
+<image src="imagenes\Captura de pantalla 2022-11-25 114126.png">
 
 **Imagina que administras la subred 229.101.94.101/18 y quieres dividir esta subred en otras cuatro subredes, basándote en Classless Inter-Domain Routing (CIDR). ¿Cuáles serían las direcciones IP y máscaras de cuatro subredes posibles? Hint: Con dos bits adicionales de máscara puedes definir cuatro subredes.**
 
-<!-- Lo primero que se debe notar es que la IP 229.101.94.101 con máscara /18 no permite definir una subred válida, pues la IP corresponde a la de un host en 229.101.64.0/18. Con máscara /18 y los 18 bits más significativos de la dirección dada, en CIDR la subred factible es 229.101.64.0/18, la cual admite un rango de direcciones IP de 229.101.64.0 a 229.101.127.255. Si la respuesta incluye este análisis, se bonifica la respuesta con un punto adicional, en caso contrario, no hay descuento de puntaje. Subredes válidas que pueden crearse con máscara /20, son las siguientes: 229.101.67.0/20, 229.101.83.0/20, 229.101.101.0/20, y 229.101.115.0/20. -->
+Lo primero que se debe notar es que la IP 229.101.94.101 con máscara /18 no permite definir una subred válida, pues la IP corresponde a la de un host en 229.101.64.0/18. Con máscara /18 y los 18 bits más significativos de la dirección dada, en CIDR la subred factible es 229.101.64.0/18, la cual admite un rango de direcciones IP de 229.101.64.0 a 229.101.127.255. Si la respuesta incluye este análisis, se bonifica la respuesta con un punto adicional, en caso contrario, no hay descuento de puntaje. Subredes válidas que pueden crearse con máscara /20, son las siguientes: 229.101.67.0/20, 229.101.83.0/20, 229.101.101.0/20, y 229.101.115.0/20.
 
 **¿En qué se diferencia el propósito del direccionamiento de red en capa 2 vs. el direccionamiento en capa 3? Si en una red LAN ethernet un computador es habilitado por primera vez, y tiene la IP de una puerta de enlace predeterminada (router) configurada, ¿Cómo logra determinar la dirección de capa 2 con la cual enviar tramas a dicha puerta de enlace?**
 
@@ -791,27 +791,27 @@ Otros:
 
 **Imagina que un companero tuyo que esta en el curso “Programacion de Bajo Nivel” ha escrito un programa en C, lo esta ejecutando, y repentinamente ve un mensaje “segmentation fault”. Explica a tu companero que significa el error y por que ha ocurrido.**
 
-<!-- El fallo de segmentacion o “segmentation fault” es un error que ocurre cuando un programa intenta realizar un acceso no valido a la memoria. Puede estar intentando acceder indebidamente a un segmento (parte del programa; variables, arreglos, funciones, etc.) violando los bits de proteccion (p.ej., escribiendo en un segmento que solo permite lectura), accediendo a una direccion de memoria m ́as all ́a del lımite de un segmento, o incluso accediendo a direcciones de memoria que no pertenecen a ningun segmento. -->
+El fallo de segmentacion o “segmentation fault” es un error que ocurre cuando un programa intenta realizar un acceso no valido a la memoria. Puede estar intentando acceder indebidamente a un segmento (parte del programa; variables, arreglos, funciones, etc.) violando los bits de proteccion (p.ej., escribiendo en un segmento que solo permite lectura), accediendo a una direccion de memoria m ́as all ́a del lımite de un segmento, o incluso accediendo a direcciones de memoria que no pertenecen a ningun segmento.
 
 **En los protocolos de transporte referenciales vistos en clases, GoBack-N y repetici ́on selectiva, el emisor retransmite cuando ha ocurrido timeout de la confirmaci ́on de segmentos enviados. ¿Que ventaja tiene la retransmision en TCP en comparacion a estos protocolos?**
 
-<!-- Cuando el emisor recibe ACKs repetidos sabe que al receptor le faltan segmentos y los retransmite inmediatamente antes que ocurre timeout. Esto es m ́as eficiente que GoBack-N y repeticion selectiva que esperan hasta la expiracion de timer para hacer retransmision. -->
+Cuando el emisor recibe ACKs repetidos sabe que al receptor le faltan segmentos y los retransmite inmediatamente antes que ocurre timeout. Esto es m ́as eficiente que GoBack-N y repeticion selectiva que esperan hasta la expiracion de timer para hacer retransmision.
 
 **¿Por que puede ser inviable implementar paginacion de un solo nivel en arquitecturas con un bus de direccionamiento muy grande?**
 
-<!-- Porque el tamano de la tabla de paginas crece demasiado debido a la gran cantidad de entradas que se necesitan. -->
+Porque el tamano de la tabla de paginas crece demasiado debido a la gran cantidad de entradas que se necesitan.
 
 **Describe que diferencias hay en el accionar del sistema operativo en los casos en que hay que (i) crear un nuevo proceso y (ii) crear un nuevo thread en un proceso.**
 
-<!-- Al crear un nuevo proceso el sistema operativo debe crear un PCB, un nuevo espacio de memoria, actualizar tablas de pagina y de segmentos, cargar la imagen del ejecutable en el espacio de memoria del proceso, y poner el thread principal del proceso en la ready queue. En cambio cuando se crea un thread, solamente se crea un TCB, y un stack para el thread. Cuando el thread esta listo para ejecutar, se pone en la ready queue. -->
+Al crear un nuevo proceso el sistema operativo debe crear un PCB, un nuevo espacio de memoria, actualizar tablas de pagina y de segmentos, cargar la imagen del ejecutable en el espacio de memoria del proceso, y poner el thread principal del proceso en la ready queue. En cambio cuando se crea un thread, solamente se crea un TCB, y un stack para el thread. Cuando el thread esta listo para ejecutar, se pone en la ready queue.
 
 **¿Que efectos puede tener un algoritmo de reemplazo de paginas que toma malas decisiones en un sistema que utiliza paginacion con swapping y dispone de poca memoria fısica en relacion al grado de multiprogramacion?**
 
-<!-- Puede aumentar considerablemente la cantidad de faltas de pagina y el tiempo que el sistema computacional pasa haciendo intercambio (swapping). Al haber poca memoria fısica, es mayor el riesgo de que ocurra hiperpaginacion y que el sistema finalmente deje de computar y no responda. -->
+Puede aumentar considerablemente la cantidad de faltas de pagina y el tiempo que el sistema computacional pasa haciendo intercambio (swapping). Al haber poca memoria fısica, es mayor el riesgo de que ocurra hiperpaginacion y que el sistema finalmente deje de computar y no responda.
 
 **Si un host en una subred IPv4 env ́ıa un segmento UDP a la direccion broadcast de la subred, ¿que debiera hacer el router de la subred al recibir el paquete IP respectivo?**
 
-<!-- El segmento debe ser descartado por el router, pues es incongruente retransmitirlo a otras redes (esta dirigido a la subred en la cual el emisor forma parte). En la subred del emisor todos los hosts recibiran una trama broadcast que les permitira recibir el paquete IP y segmento UDP contenido en ella, por lo que el router tampoco requiere intervenir en este proceso. -->
+El segmento debe ser descartado por el router, pues es incongruente retransmitirlo a otras redes (esta dirigido a la subred en la cual el emisor forma parte). En la subred del emisor todos los hosts recibiran una trama broadcast que les permitira recibir el paquete IP y segmento UDP contenido en ella, por lo que el router tampoco requiere intervenir en este proceso.
 
 ## 2. Sincronizacion de Procesos
 
@@ -836,6 +836,15 @@ Otros:
 ## 7. Redes IPv4
 
 <!-- faltan mas cosas por añadir -->
+
+
+
+
+
+
+
+
+
 
 # Guia de Estudio - Introduccion a Redes
 
