@@ -1,5 +1,5 @@
 
-# Clase 01 - Introduccion a los Sistemas Operativos
+<!-- # Clase 01 - Introduccion a los Sistemas Operativos -->
 
 <!-- <image src="imagenes\clase01\clase01-01.png">
 <image src="imagenes\clase01\clase01-02.png">
@@ -28,8 +28,28 @@
 
 # Clase 02 - Procesos y concurrencia #1
 
-<!-- <image src="imagenes\clase02\clase02-01.png">
-<image src="imagenes\clase02\clase02-02.png">
+<!-- <image src="imagenes\clase02\clase02-01.png"> -->
+
+
+## ¿Que es un proceso?
+
+Es un pograma (o imagen) en ejecucion, lo que incluye:
+- Seccion de texto
+- Estados de pograma: Pogram Counter y registro de CPU
+- Seccion de datos (variables globales)
+- Stack del proceso (datos temporales)
+- El heap: memoria asignada dinamicamente durante la ejecucion
+
+<image src="imagenes/Screenshot from 2022-11-29 13-24-58.png">
+
+<!-- <image src="imagenes\clase02\clase02-02.png"> -->
+
+## Espacio de direcciondes de un proceso
+- Espacio de direcciones -> Conjunto de direcciones en memoria accesible por el proceso
+- Tamaño del espacio depende de la arquitectura de CPU (bus de direcciones)
+
+
+
 <image src="imagenes\clase02\clase02-03.png">
 <image src="imagenes\clase02\clase02-04.png">
 <image src="imagenes\clase02\clase02-05.png">
@@ -53,12 +73,12 @@
 <image src="imagenes\clase02\clase02-23.png">
 <image src="imagenes\clase02\clase02-24.png">
 <image src="imagenes\clase02\clase02-25.png">
-<image src="imagenes\clase02\clase02-26.png"> -->
+<image src="imagenes\clase02\clase02-26.png"> 
 
 
 # Clase 03 - Planificacion de Procesos y Comunicacion Inter-Procesos
 
-<!-- <image src="imagenes\clase03\clase03-01.png">
+<image src="imagenes\clase03\clase03-01.png">
 <image src="imagenes\clase03\clase03-02.png">
 <image src="imagenes\clase03\clase03-03.png">
 <image src="imagenes\clase03\clase03-04.png">
@@ -82,12 +102,12 @@
 <image src="imagenes\clase03\clase03-22.png">
 <image src="imagenes\clase03\clase03-23.png">
 <image src="imagenes\clase03\clase03-24.png">
-<image src="imagenes\clase03\clase03-25.png"> -->
+<image src="imagenes\clase03\clase03-25.png">
 
 
 # Clase 04 - Seccion critica, semaforos y problemas clasico de concurrencia
 
-<!-- <image src="imagenes\clase04-1\clase04-1-01.png">
+<image src="imagenes\clase04-1\clase04-1-01.png">
 <image src="imagenes\clase04-1\clase04-1-02.png">
 <image src="imagenes\clase04-1\clase04-1-03.png">
 <image src="imagenes\clase04-1\clase04-1-04.png">
@@ -110,11 +130,11 @@
 <image src="imagenes\clase04-1\clase04-1-21.png">
 <image src="imagenes\clase04-1\clase04-1-22.png">
 <image src="imagenes\clase04-1\clase04-1-23.png">
-<image src="imagenes\clase04-1\clase04-1-24.png"> -->
+<image src="imagenes\clase04-1\clase04-1-24.png">
 
 # Clase 05 - Lock, estructura de datos sincronizadas, analisis de bloqueos mutuos
 
-<!-- <image src="imagenes\clase05-1\clase05-1-01.png">
+<image src="imagenes\clase05-1\clase05-1-01.png">
 <image src="imagenes\clase05-1\clase05-1-02.png">
 <image src="imagenes\clase05-1\clase05-1-03.png">
 <image src="imagenes\clase05-1\clase05-1-04.png">
@@ -129,12 +149,12 @@
 <image src="imagenes\clase05-1\clase05-1-13.png">
 <image src="imagenes\clase05-1\clase05-1-14.png">
 <image src="imagenes\clase05-1\clase05-1-15.png">
-<image src="imagenes\clase05-1\clase05-1-16.png"> -->
+<image src="imagenes\clase05-1\clase05-1-16.png">
 
 
 # Clase 06 - Administracion de Memoria #1
 
-<!-- <image src="imagenes\clase06-2\clase06-2-01.png">
+<image src="imagenes\clase06-2\clase06-2-01.png">
 <image src="imagenes\clase06-2\clase06-2-02.png">
 <image src="imagenes\clase06-2\clase06-2-03.png">
 <image src="imagenes\clase06-2\clase06-2-04.png">
@@ -150,12 +170,12 @@
 <image src="imagenes\clase06-2\clase06-2-14.png">
 <image src="imagenes\clase06-2\clase06-2-15.png">
 <image src="imagenes\clase06-2\clase06-2-16.png">
-<image src="imagenes\clase06-2\clase06-2-17.png"> -->
+<image src="imagenes\clase06-2\clase06-2-17.png">
 
 
 # Clase 07 - Administracion de Memoria #2
 
-<!-- <image src="imagenes\clase07-1\clase07-1-01.png">
+<image src="imagenes\clase07-1\clase07-1-01.png">
 <image src="imagenes\clase07-1\clase07-1-02.png">
 <image src="imagenes\clase07-1\clase07-1-03.png">
 <image src="imagenes\clase07-1\clase07-1-04.png">
@@ -177,12 +197,12 @@
 <image src="imagenes\clase07-1\clase07-1-20.png">
 <image src="imagenes\clase07-1\clase07-1-21.png">
 <image src="imagenes\clase07-1\clase07-1-22.png">
-<image src="imagenes\clase07-1\clase07-1-23.png"> -->
+<image src="imagenes\clase07-1\clase07-1-23.png">
 
 
 # Clase 08 - Administracion de Memoria #3
 
-<!-- <image src="imagenes\clase08-6\clase08-6-01.png">
+<image src="imagenes\clase08-6\clase08-6-01.png">
 <image src="imagenes\clase08-6\clase08-6-02.png">
 <image src="imagenes\clase08-6\clase08-6-03.png">
 <image src="imagenes\clase08-6\clase08-6-04.png">
@@ -200,11 +220,11 @@
 <image src="imagenes\clase08-6\clase08-6-16.png">
 <image src="imagenes\clase08-6\clase08-6-17.png">
 <image src="imagenes\clase08-6\clase08-6-18.png">
-<image src="imagenes\clase08-6\clase08-6-19.png"> -->
+<image src="imagenes\clase08-6\clase08-6-19.png">
 
 # Clase 09 - Discos y Sistemas de Archivo
 
-<!-- <image src="imagenes\clase09-3\clase09-3-01.png">
+<image src="imagenes\clase09-3\clase09-3-01.png">
 <image src="imagenes\clase09-3\clase09-3-02.png">
 <image src="imagenes\clase09-3\clase09-3-03.png">
 <image src="imagenes\clase09-3\clase09-3-04.png">
@@ -240,7 +260,7 @@
 <image src="imagenes\clase09-3\clase09-3-34.png">
 <image src="imagenes\clase09-3\clase09-3-35.png">
 <image src="imagenes\clase09-3\clase09-3-36.png">
-<image src="imagenes\clase09-3\clase09-3-37.png"> -->
+<image src="imagenes\clase09-3\clase09-3-37.png">
 
 # Clase 10 - Sistemas Distribuidos e Introduccion a Redes
 
