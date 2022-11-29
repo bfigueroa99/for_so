@@ -586,7 +586,7 @@ Otros:
 <image src="imagenes\clase12-1\clase12-1-42.png">
 <image src="imagenes\clase12-1\clase12-1-43.png"> -->
 
-# Clase 13 - Capa de Red
+<!-- # Clase 13 - Capa de Red -->
 
 <!-- <image src="imagenes\clase13-3\clase13-3-01.png">
 <image src="imagenes\clase13-3\clase13-3-02.png">
@@ -641,7 +641,7 @@ Otros:
 
 
 
-# Clase 14 - Capa de Enlace:
+<!-- # Clase 14 - Capa de Enlace:
 
 <!-- <image src="imagenes\clase14-3\clase14-3-01.png"> -->
 
@@ -725,7 +725,7 @@ Otros:
 <!-- <image src="imagenes\clase14-3\clase14-3-04.png"> -->
 
 
-**nota:** trama = frame
+**nota:** trama = frame -->
 
 
 # Examen 2019
@@ -765,6 +765,7 @@ El máximo tamaño de archivo posible (mfs) es dado por:
 **Imagina que administras la subred 229.101.94.101/18 y quieres dividir esta subred en otras cuatro subredes, basándote en Classless Inter-Domain Routing (CIDR). ¿Cuáles serían las direcciones IP y máscaras de cuatro subredes posibles? Hint: Con dos bits adicionales de máscara puedes definir cuatro subredes.**
 
 Lo primero que se debe notar es que la IP 229.101.94.101 con máscara /18 no permite definir una subred válida, pues la IP corresponde a la de un host en 229.101.64.0/18. Con máscara /18 y los 18 bits más significativos de la dirección dada, en CIDR la subred factible es 229.101.64.0/18, la cual admite un rango de direcciones IP de 229.101.64.0 a 229.101.127.255. Si la respuesta incluye este análisis, se bonifica la respuesta con un punto adicional, en caso contrario, no hay descuento de puntaje. Subredes válidas que pueden crearse con máscara /20, son las siguientes: 229.101.67.0/20, 229.101.83.0/20, 229.101.101.0/20, y 229.101.115.0/20.
+
 
 **¿En qué se diferencia el propósito del direccionamiento de red en capa 2 vs. el direccionamiento en capa 3? Si en una red LAN ethernet un computador es habilitado por primera vez, y tiene la IP de una puerta de enlace predeterminada (router) configurada, ¿Cómo logra determinar la dirección de capa 2 con la cual enviar tramas a dicha puerta de enlace?**
 
